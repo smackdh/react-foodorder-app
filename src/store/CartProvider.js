@@ -1,12 +1,32 @@
 import CartContext from "./cart-context";
+import { useReducer } from "react";
+
+const defaultCartState = {
+  items: [],
+  totalAmount: 0,
+};
+
+const cartReducer = (state, action) => {
+  if ()
+  return defaultCartState;
+};
 
 const CartProvider = (props) => {
-  const addItemToCartHandler = (item) => {};
-  const removeItemFromCartHandler = (id) => {};
+  const [cartState, dispatchCartAction] = useReducer(
+    cartReducer,
+    defaultCartState
+  );
+
+  const addItemToCartHandler = (item) => {
+    dispatchCartAction({ type: "ADD_ITEM", actionItem: item });
+  };
+  const removeItemFromCartHandler = (id) => {
+    dispatchCartAction({ type: "REMOVE_ITEM", actionId: id})
+  };
 
   const cartContext = {
-    items: [],
-    totalAmount: 0,
+    items: cartState.items,
+    totalAmount: cartState.totalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
   };
@@ -19,5 +39,3 @@ const CartProvider = (props) => {
 };
 
 export default CartProvider;
-/// SOMETHING HERE _____ LINE 14?
-/// You've made a component inside a component. Check CartContext -----
