@@ -3,16 +3,17 @@ import classes from "./MealItemForm.module.css";
 import Input from "../../UI/Input";
 
 const MealItemForm = (props) => {
-  const addHandler = (e) => {
-    e.preventDefault();
-    console.log("testing");
-  };
+  // const addHandler = (e) => {
+  //   e.preventDefault();
+  //   console.log("testing");
+  // };
 
   return (
     <form className={classes.form}>
       <Input
         label="Amount"
         input={{
+          key: "amount" + props.id,
           id: "amount" + props.id,
           type: "number",
           min: "1",
@@ -21,9 +22,7 @@ const MealItemForm = (props) => {
           defaultValue: "1",
         }}
       />
-      <button onClick={addHandler} type="submit">
-        + Add
-      </button>
+      <button type="submit">+ Add</button>
     </form>
   );
 };

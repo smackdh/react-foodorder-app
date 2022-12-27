@@ -3,7 +3,7 @@ import classes from "./Header.module.css";
 import julbord from "../../assets/julbord.png";
 import HeaderCartButton from "./HeaderCartButton";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <Fragment>
       <header className={classes.header}>
