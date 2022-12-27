@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import classes from "./Header.module.css";
-import meals from "../../assets/meals.jpg";
+import julbord from "../../assets/julbord.png";
 import HeaderCartButton from "./HeaderCartButton";
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
         <HeaderCartButton />
       </header>
       <div className={classes["main-image"]}>
-        <img className={["main-image.image"]} src={meals} alt="meal table" />
+        <img className={["main-image.image"]} src={julbord} alt="meal table" />
       </div>
     </Fragment>
   );
