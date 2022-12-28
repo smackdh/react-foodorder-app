@@ -6,10 +6,12 @@ import CartItem from "./CartItem";
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
-  const totalAmount = `${cartCtx.totalAmount.toFixed(2)}`;
+
+  const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
   const hasItems = cartCtx.items.length > 0;
 
   const cartItemRemoveHandler = (id) => {};
+
   const cartItemAddHandler = (item) => {};
 
   const cartItems = (
@@ -30,7 +32,6 @@ const Cart = (props) => {
   return (
     <Modal onClose={props.onClose}>
       {cartItems}
-
       <div className={classes.total}>
         <span>Total Amount</span>
         <span>{totalAmount}</span>
